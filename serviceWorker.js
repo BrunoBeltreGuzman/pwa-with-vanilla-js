@@ -1,16 +1,10 @@
-const staticDevCoffee = "dev-coffee-site-v1";
-const assets = [
-       "/",
-       "/index.html",
-       "/css/style.css",
-       "/js/app.js",
-       "/images/coffee1.png",
-];
+const nameCache = "thecache";
+const assetsCache = ["/"];
 
 self.addEventListener("install", (installEvent) => {
        installEvent.waitUntil(
-              caches.open(staticDevCoffee).then((cache) => {
-                     cache.addAll(assets);
+              caches.open(nameCache).then((cache) => {
+                     cache.addAll(assetsCache);
               })
        );
 });
